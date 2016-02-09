@@ -47,7 +47,7 @@ class StateTransferLSTM(LSTM):
 
         last_output, outputs, states = K.rnn(self.step, X, initial_states,
                                              go_backwards=self.go_backwards,
-                                             mask=mask)
+                                             masking=mask)
         n = len(states)
         if self.stateful and not self.state_input:
             self.updates = []
