@@ -1,6 +1,6 @@
 from keras import backend as K
 from copy import deepcopy
-import cPickle
+from six.moves import cPickle
 from warnings import warn
 from keras.layers.core import MaskedLayer
 
