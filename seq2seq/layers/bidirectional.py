@@ -1,3 +1,4 @@
+from __future__ import division
 from keras import backend as K
 from copy import deepcopy
 from six.moves import cPickle
@@ -30,8 +31,8 @@ class Bidirectional(MaskedLayer):
         self.merge_mode = merge_mode
         if weights:
             nw = len(weights)
-            self.forward.initial_weights = weights[:nw/2]
-            self.reverse.initial_weights = weights[nw/2:]
+            self.forward.initial_weights = weights[:nw//2]
+            self.reverse.initial_weights = weights[nw//2:]
         self._cache_enabled = True
         self.stateful = rnn.stateful
         self.return_sequences = rnn.return_sequences
@@ -45,8 +46,8 @@ class Bidirectional(MaskedLayer):
 
     def set_weights(self, weights):
         nw = len(weights)
-        self.forward.set_weights(weights[:nw/2])
-        self.reverse.set_weights(weights[:nw/2])
+        self.forward.set_weights(weights[:nw//2])
+        self.reverse.set_weights(weights[:nw//2])
 
     def set_previous(self, layer):
         self.previous = layer
